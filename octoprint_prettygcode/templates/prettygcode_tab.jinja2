@@ -13,7 +13,7 @@
     <button class="pgdashtoggle" title="Toggle DashBoard window (if installed)"><i class="fa fa-tachometer"></i></button>
     <button class="pgcameratoggle" title="Toggle webcam view window">&#128247</button>
   </div>
-  
+
 
 </div>
 
@@ -51,7 +51,7 @@ Syncing to print progress is harder than it sounds. The built in OctoPrint GCode
 
 
 <h4>Performance and WebGL:</h4>
-PrettyGCode uses WebGL and Three.js for rendering. WebGL may not be supported on all browsers. And performance maybe slow on older computers, especially with larger GCode models. 
+PrettyGCode uses WebGL and Three.js for rendering. WebGL may not be supported on all browsers. And performance maybe slow on older computers, especially with larger GCode models.
 
 <h5>Tested browsers</h5>
 
@@ -87,10 +87,9 @@ Additional CSS:</h5><button class="btn btn-primary" data-bind="click: updateCss"
 <a id="fs_link" href="https://github.com/Kragrathea/OctoPrint-PrettyGCode">PrettyGCode homepage</a>
 
 <h4>
-Discussion:</h4>
-<a id="fs_link" href="https://community.octoprint.org/t/wip-prettygcode-viewer/">PrettyGCode discussion on OctoPrint forums</a>
-
-</div> 
-
-
-
+Add new models to scene:</h4>
+Add model: <input type="file" id="objFile" name="ModelFile" accept=".obj">
+X: <input type="number" id="x_pos" name="X_Postition" min="0" max="900">
+Y: <input type="number" id="y_pos" name="Y_Postition" min="0" max="400">
+Z: <input type="number" id="z_pos" name="Z_Postition" min="0" max="300">
+</div>

@@ -673,7 +673,7 @@ $(function () {
                                 //alert("Antialias chenges won't take effect until you refresh the page");
                             });
 
-                        gui.add(pgSettings, 'showNozzle');
+                        gui.add(pgSettings, 'showMachine');
 
                         //gui.add(pgSettings, 'reloadGcode');
 
@@ -717,12 +717,12 @@ $(function () {
                     //load Frame model.
                     var objloader2 = new THREE.OBJLoader();
                     objloader2.load( '/plugin/prettygcode/static/js/models/Frame.obj', function ( obj2 ) {
-                        obj2.quaternion.setFromEuler(new THREE.Euler( Math.PI / 2, 0, 0));
+                        obj2.quaternion.setFromEuler(new THREE.Euler( 0, 0, 0));
                         obj2.scale.setScalar(1)
-                        obj2.position.set(0, 0, 10);
+                        obj2.position.set(0, 0, 0);
                         obj2.name="frame";
                         var frameMaterial = new THREE.MeshStandardMaterial( {
-                            metalness: 1,   // between 0 and 1
+                            metalness: 0.2,   // between 0 and 1
                             roughness: 0.5, // between 0 and 1
                             envMap: cubeCamera.renderTarget.texture,
                             color: new THREE.Color(0xffffff),
