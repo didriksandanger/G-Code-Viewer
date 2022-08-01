@@ -717,7 +717,7 @@ $(function () {
                     //load Frame model.
                     var objloader2 = new THREE.OBJLoader();
                     objloader2.load( '/plugin/prettygcode/static/js/models/Frame.obj', function ( obj2 ) {
-                        obj2.quaternion.setFromEuler(new THREE.Euler( 0, 0, 0));
+                        obj2.quaternion.setFromEuler(new THREE.Euler( Math.PI / 2, 0, 0));
                         obj2.scale.setScalar(1)
                         obj2.position.set(0, 0, 0);
                         obj2.name="frame";
