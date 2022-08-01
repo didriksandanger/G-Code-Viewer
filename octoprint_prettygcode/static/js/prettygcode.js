@@ -715,11 +715,12 @@ $(function () {
                     } );
 
                     //load Frame model.
-                    objloader.load( '/plugin/prettygcode/static/js/models/Frame.obj', function ( obj ) {
-                        obj.quaternion.setFromEuler(new THREE.Euler( Math.PI / 2, 0, 0));
-                        obj.scale.setScalar(0.1)
-                        obj.position.set(0, 0, 0);
-                        obj.name="frame";
+                    var objloader2 = new THREE.OBJLoader();
+                    objloader2.load( '/plugin/prettygcode/static/js/models/Frame.obj', function ( obj2 ) {
+                        obj2.quaternion.setFromEuler(new THREE.Euler( Math.PI / 2, 0, 0));
+                        obj2.scale.setScalar(1)
+                        obj2.position.set(0, 0, 10);
+                        obj2.name="frame";
                         var frameMaterial = new THREE.MeshStandardMaterial( {
                             metalness: 1,   // between 0 and 1
                             roughness: 0.5, // between 0 and 1
@@ -727,13 +728,14 @@ $(function () {
                             color: new THREE.Color(0xffffff),
                             //flatShading:false,
                         } );
-                        obj.children.forEach(function(e,i){
+                        obj2.children.forEach(function(e,i){
                             if ( e instanceof THREE.Mesh ) {
-                                e.material = nozzleMaterial;
+                                e.material = frameMaterial;
                                 //e.geometry.computeVertexNormals();
                             }
                         })
-                        scene.add( obj );
+                        frameModel=obj2;
+                        scene.add( obj2 );
                     } );
 
 
@@ -1821,6 +1823,7 @@ $(function () {
                 //show or hide nozzle based on settings.
                 if(nozzleModel && nozzleModel.visible!= pgSettings.showNozzle){
                     nozzleModel.visible= pgSettings.showNozzle;
+                    frameModel.visible= pgSettings.showNozzle;
                     needRender=true;
                 }
 
