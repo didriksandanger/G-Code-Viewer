@@ -520,6 +520,17 @@ $(function () {
             $("#pgcss").html(newCss);
 
         }
+        self.updateModels = function (newModel)
+        {
+            //alert(this)
+            var xpos=$("#x_pos").val();
+            var ypos=$("#y_pos").val();
+            var zpos=$("#z_pos").val();
+            console.log(["Pos: X: " + xpos + ", Y: " + ypos + ", Z: " + zpos + "."]);
+            /*localStorage.setItem('pg_add_css_val',newCss)
+            $("#pgcss").html(newCss);*/
+
+        }
         self.onAfterBinding = function () {
             console.log("onAfterBinding")
 
@@ -1821,6 +1832,7 @@ $(function () {
 
                 //show or hide nozzle based on settings.
                 if(nozzleModel && nozzleModel.visible!= pgSettings.showMachine){
+                    nozzleModel.visible= pgSettings.showMachine;
                     nozzleModel.visible= pgSettings.showMachine;
                     needRender=true;
                 }

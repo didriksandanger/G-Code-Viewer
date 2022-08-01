@@ -83,8 +83,13 @@ Additional CSS:</h5><button class="btn btn-primary" data-bind="click: updateCss"
 </textarea>
 <button class="btn btn-primary" data-bind="click: updateCss">Add CSS</button>
 
-<h4>PrettyGCode Homepage:</h4>
-<a id="fs_link" href="https://github.com/Kragrathea/OctoPrint-PrettyGCode">PrettyGCode homepage</a>
+<h4>Add model to scene:</h4>
+Add model: <input type="file" id="objFile" name="ModelFile" accept=".obj">
+Model ID: <input type="text" id="objID" name="ModelID">
+X: <input type="number" id="x_pos" name="X_Postition" min="0" max="900">
+Y: <input type="number" id="y_pos" name="Y_Postition" min="0" max="400">
+Z: <input type="number" id="z_pos" name="Z_Postition" min="0" max="300">
+<button class="btn btn-primary" data-bind="click: updateModels">Add Model</button>
 
 <h4>
 Discussion:</h4>
