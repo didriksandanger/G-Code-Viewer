@@ -528,7 +528,7 @@ $(function () {
             var zpos=$("#z_pos").val();
             console.log(["Pos: X: " + xpos + ", Y: " + ypos + ", Z: " + zpos + "."]);
             var objloader3 = new THREE.OBJLoader();
-            objloader3.load( $("#objFile").val(), function ( obj3 ) {
+            objloader3.load( ("/downloads/files/local/" + $("#objFile").val()), function ( obj3 ) {
                 obj3.quaternion.setFromEuler(new THREE.Euler( 0, 0, 0));
                 obj3.scale.setScalar(0.1)
                 obj3.position.set(xpos, ypos, zpos);
