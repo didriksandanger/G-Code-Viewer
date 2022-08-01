@@ -577,7 +577,7 @@ $(function () {
             this.showDash=false;
             this.antialias=true;
 
-            this.showNozzle=true;
+            this.showMachine=true;
             this.highlightCurrentLayer=true;
         };
         var pgSettings = new PGSettings();
