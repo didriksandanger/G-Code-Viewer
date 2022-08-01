@@ -719,10 +719,10 @@ $(function () {
                     objloader2.load( '/plugin/prettygcode/static/js/models/Frame.obj', function ( obj2 ) {
                         obj2.quaternion.setFromEuler(new THREE.Euler( Math.PI / 2, 0, 0));
                         obj2.scale.setScalar(1)
-                        obj2.position.set(0, 0, 0);
+                        obj2.position.set(0, 0, 10);
                         obj2.name="frame";
                         var frameMaterial = new THREE.MeshStandardMaterial( {
-                            metalness: 0.2,   // between 0 and 1
+                            metalness: 1,   // between 0 and 1
                             roughness: 0.5, // between 0 and 1
                             envMap: cubeCamera.renderTarget.texture,
                             color: new THREE.Color(0xffffff),
