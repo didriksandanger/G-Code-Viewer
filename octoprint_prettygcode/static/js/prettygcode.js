@@ -527,6 +527,20 @@ $(function () {
             var ypos=$("#y_pos").val();
             var zpos=$("#z_pos").val();
             console.log(["Pos: X: " + xpos + ", Y: " + ypos + ", Z: " + zpos + "."]);
+            var objloader3 = new THREE.OBJLoader();
+            objloader3.load( $("objFile").val(), function ( obj3 ) {
+                obj3.quaternion.setFromEuler(new THREE.Euler( 0, 0, 0));
+                obj3.scale.setScalar(0.1)
+                obj3.position.set(xpos, ypos, zpos);
+                obj3.name=$("ModelID").val();
+                obj3.children.forEach(function(e,i){
+                    if ( e instanceof THREE.Mesh ) {
+                        e.material = frameMaterial;
+                        //e.geometry.computeVertexNormals();
+                    }
+                })
+                scene.add( obj3 );
+            } );
             /*localStorage.setItem('pg_add_css_val',newCss)
             $("#pgcss").html(newCss);*/
 
