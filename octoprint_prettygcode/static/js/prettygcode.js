@@ -533,9 +533,16 @@ $(function () {
                 obj3.scale.setScalar(0.1)
                 obj3.position.set(xpos, ypos, zpos);
                 obj3.name=$("#ModelID").val();
+                var modelMaterial = new THREE.MeshStandardMaterial( {
+                    metalness: 1,   // between 0 and 1
+                    roughness: 0.5, // between 0 and 1
+                    envMap: cubeCamera.renderTarget.texture,
+                    color: new THREE.Color(0xffffff),
+                    //flatShading:false,
+                } );
                 obj3.children.forEach(function(e,i){
                     if ( e instanceof THREE.Mesh ) {
-                        e.material = frameMaterial;
+                        e.material = modelMaterial;
                         //e.geometry.computeVertexNormals();
                     }
                 })
